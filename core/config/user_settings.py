@@ -11,7 +11,7 @@ log = get_logger(__name__)
 
 
 SETTINGS_APP_NAME = "GPT Pilot"
-DEFAULT_TELEMETRY_ENDPOINT = "https://api.pythagora.io/telemetry"
+DEFAULT_TELEMETRY_ENDPOINT = "https://api.pythagoras.io/telemetry"
 
 
 class TelemetrySettings(BaseModel):
