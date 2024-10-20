@@ -36,9 +36,10 @@ function App() {
     try {
       setError('');
       const response = await api.get('/api/list_projects');
-      setProjects(response.data.projects);
+      setProjects(response.data.projects || []); // Ensure it's always an array
     } catch (error) {
       setError(error.response?.data?.error || 'An error occurred while listing projects');
+      setProjects([]); // Set to empty array on error
     }
   };
 
@@ -97,7 +98,7 @@ function App() {
         <button onClick={listProjects}>Refresh Projects</button>
       </div>
       <div>
-        {projects.map((project) => (
+        {projects && projects.map((project) => (
           <div key={project.id}>
             {project.name} - 
             <button onClick={() => runProject(project.id)}>Run</button>
