@@ -10,7 +10,7 @@ from core.log import get_logger
 log = get_logger(__name__)
 
 
-SETTINGS_APP_NAME = "GPT Pilot"
+SETTINGS_APP_NAME = "CodeWriter"
 DEFAULT_TELEMETRY_ENDPOINT = "https://api.pythagoras.io/telemetry"
 
 
@@ -44,7 +44,7 @@ def resolve_config_dir() -> Path:
 class UserSettings(BaseModel):
     """
     This object holds all the global user settings, that are applicable for
-    all Pythagora/GPT-Pilot installations.
+    all CodeWriter installations.
 
     The use settings are stored in a JSON file in the config directory.
 
